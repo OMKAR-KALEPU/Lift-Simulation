@@ -1,0 +1,76 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    overflow-x: scroll;
+}
+
+.each-floor {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 10px solid #ddd;
+    height: 100px;
+    width: 100%;
+    position: relative;
+    min-width: 100%; 
+}
+
+.floor-engine {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 200px;
+}
+
+.floor-engine span {
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.floor-engine button {
+    margin: 1px;
+}
+
+.initial-lifts {
+    position: absolute;
+    left: 220px;
+    display: flex;
+    gap: 20px;
+    bottom: 0;
+}
+
+.each-lift {
+    width: 80px;
+    height: 90px;
+    background-color: #337ab7;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* overflow: hidden; */
+    transition: transform 0.5s ease;
+    transition: -webkit-transform 0.5s ease;
+    border: 7.5px solid #ddd;
+    z-index: 999;
+}
+
+.lift-door {
+    width: 50%;
+    height: 100%;
+    background-color: #343a40;
+    transition: transform 2.5s ease-in-out;
+}
+
+.left-door, 
+.right-door {
+    transform: translateX(0);
+}
+
+.lift-door.open.left-door, 
+.lift-door.open.right-door  {
+    transform: translateX(-100%);
+}
