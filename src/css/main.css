@@ -1,76 +1,140 @@
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: italic;
-    overflow-x: scroll;
 }
 
-.each-floor {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.flexbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+button {
+    background-color: #2e6da4;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#simulation-container {
+    display: flex; 
+    margin: 20px;
+    overflow-x: auto; 
+    flex-direction: column;
+    width: 100%; 
+}
+
+.floor {
+    background-color: white;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 10px solid #ddd;
-    height: 100px;
-    width: 100%;
+    border: 1px solid #ccc;
     position: relative;
-    min-width: 100%; 
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
 }
 
-.floor-engine {
+.controls-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 200px;
 }
 
-.floor-engine span {
-    font-weight: bold;
-    margin-right: 20px;
+.controls-container span {
+    margin-right: 15px;
 }
 
-.floor-engine button {
+.controls-container button {
     margin: 1px;
+    border-radius: 5px;
+    background-color: #2e6da4;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.initial-lifts {
+.lifts-container {
     position: absolute;
     left: 220px;
     display: flex;
-    gap: 20px;
-    bottom: 0;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.each-lift {
-    width: 80px;
-    height: 90px;
-    background-color: #337ab7;
-    position: relative;
+.lift {
+    width: 60px;
+    height: 75px;
+    background-color: white;
+    color: #2e6da4;
+    border: 2px solid #2e6da4;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* overflow: hidden; */
-    transition: transform 0.5s ease;
+    overflow: hidden;
+    position: relative;
+    margin: 0 5px;
+    transition: transform 0.5s ease; 
     transition: -webkit-transform 0.5s ease;
-    border: 7.5px solid #ddd;
-    z-index: 999;
 }
 
 .lift-door {
     width: 50%;
     height: 100%;
-    background-color: #343a40;
-    transition: transform 2.5s ease-in-out;
+    background-color: #2e6da4;
+    top: 0;
+    transition: transform 2.5s ease;
 }
 
-.left-door, 
+.left-door {
+    left: 0;
+    transform-origin: left;
+}
+
 .right-door {
-    transform: translateX(0);
+    right: 0;
+    transform-origin: right;
 }
 
-.lift-door.open.left-door, 
-.lift-door.open.right-door  {
-    transform: translateX(-100%);
+.lift-door.open {
+    transform: translateX(-100%); 
+}
+
+.lift-door.open.right-door {
+    transform: translateX(100%); 
+}
+
+@media (max-width: 600px) {
+    .inputs {
+        width: 95%;
+    }
+
+    .floor {
+        font-size: 14px; 
+    }
+
+    .lift {
+        width: 50px;
+        height: 80px; 
+    }
 }
