@@ -3,12 +3,7 @@ const start = document.getElementById("simulate");
 start.addEventListener("click", function (e) {
    e.preventDefault(); 
 
-  if (document.getElementById("nbrOfFloors").value === "" || document.getElementById("nbrOfLifts").value === "") {
-    alert('Please fill out number of floors and lifts');
-    return;
-  }
-
-  const floors = parseInt(document.getElementById("nbrOfFloors").value);
+  const floors = parseInt(document.getElementById("nbrOfFloors").value);  
   const lifts = parseInt(document.getElementById("nbrOfLifts").value);
   const container = document.getElementById("simulation-container");
   const headContainer = document.getElementById("main-container");
